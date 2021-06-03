@@ -1,0 +1,23 @@
+ALGORITHM checkpointAlgo
+VAR
+    nbcaracter:INTEGER:=0;
+    nbvowels:INTEGER:=0;
+    nbwords:INTEGER:=0;
+    str:CHAR;
+    i:INTEGER:=0;
+    vowels: ARRAY_OF CHAR["a","e","i","u","o"];
+
+BEGIN
+   Write("write a sentence that ends with a point");
+   Read(str);
+   WHILE (str[i]<> ".") DO
+    IF (str[i] In vowels) THEN
+          nbvowels=nbvowels+1
+    ELSE IF str[i] :=' ' THEN
+        nbwords=nbwords+1 
+    ELSE nbcaracter := nbcaracter+1 ;
+    END_IF
+    i:=i+1;
+   END_WHILE
+END   
+    
